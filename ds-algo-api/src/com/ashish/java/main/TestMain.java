@@ -15,8 +15,12 @@ public class TestMain {
 		for(int i=0; i< c.length; i++) {
 		 	System.out.print(c[i] + " ");
 		}*/
-		int key = 1;
-		System.out.println(ArraysUtil.searchInSortedRotatedArray(b, key));
+		int key = 0;
+		int index = ArraysUtil.searchInSortedRotatedArray(b, key);
+		if(index != -1)
+		System.out.println("Key is found at index : " + index);
+		else
+		System.out.println("Key not found ");	
 	}
 
 }
