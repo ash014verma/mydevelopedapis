@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+<named-query name="Details.fetchDetails">
+<query>select iden.identificationNumber, iden.customerFirstName, iden.customerMiddleName, iden.customerLastName 
+		from  LoanDetail ld, IdentificationDetail iden where ld.loanAppId = iden.assocLoanAppId</query>
+</named-query>
+<sql-result-set-mapping name="AuthorMappingXml">
+    <entity-result entity-class="com.ashish.utilities.pan.vo.PANDetailsVO">
+        <field-result name="identificationNumber" column="identificationNumber"/>
+        <field-result name="customerFirstName" column="customerFirstName"/>
+        <field-result name="customerMiddleName" column="customerMiddleName"/>
+        <field-result name="customerLastName" column="customerLastName"/>
+    </entity-result>
+</sql-result-set-mapping>
+  
+</entity-mappings>
+ 
