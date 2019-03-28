@@ -1,5 +1,6 @@
 package com.ashish.utilities.pan.dao;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -15,16 +16,16 @@ public class PANDetailsDAOImpl {
 	public  List<PANDetailsVO> fetchPANDetails(){
 		EntityManagerFactory emf =Persistence.createEntityManagerFactory("pan-validation-utility");
 		EntityManager em = emf.createEntityManager();
-		//Query query = em.createNamedQuery("IdentificationDetail.findAll");
-		Query query = em.createQuery("select iden.identificationNumber, iden.customerFirstName, iden.customerMiddleName, iden.customerLastName \r\n" + 
-				"		from  LoanDetail ld, IdentificationDetail iden where ld.loanAppId = iden.assocLoanAppId");
-		List<Object>  results = query.getResultList();
-		for(Object obj: results) {
-			System.out.println(obj);
+		Query query = em.createNamedQuery("Details.fetchDetails");
+		@SuppressWarnings("unchecked")
+		List<Object[]>  results = query.getResultList();
+		for(Object[] obj : results) {
+			System.out.println("PANDetailsVO [identificationNumber=" + obj[0] + ", customerFirstName=" + obj[1]
+					+ ", customerMiddleName=" + obj[2] + ", customerLastName=" + obj[3] + "]");
 		}
-		
-		return query.getResultList();
+		final List<PANDetailsVO> panDetailsList = new LinkedList<>();
+		return panDetailsList;
 
 	}
 
-}
+} 

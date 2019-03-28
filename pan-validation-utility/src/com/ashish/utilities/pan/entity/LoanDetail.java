@@ -20,7 +20,6 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="LOAN_DETAILS")
-@NamedQuery(name="LoanDetail.findAll", query="SELECT l FROM LoanDetail l")
 public class LoanDetail implements Serializable {
 	@OneToOne
 	private IdentificationDetail identificationDetail;

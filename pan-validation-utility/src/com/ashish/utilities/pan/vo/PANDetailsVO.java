@@ -36,6 +36,11 @@ public class PANDetailsVO implements Serializable{
 	public void setCustomerLastName(String customerLastName) {
 		this.customerLastName = customerLastName;
 	}
+	@Override
+	public String toString() {
+		return "PANDetailsVO [identificationNumber=" + identificationNumber + ", customerFirstName=" + customerFirstName
+				+ ", customerMiddleName=" + customerMiddleName + ", customerLastName=" + customerLastName + "]";
+	}
 	
 
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.inject.Named;
 
 import com.ashish.utilities.pan.dao.PANDetailsDAOImpl;
-import com.ashish.utilities.pan.entity.PANDetailsEntity;
 import com.ashish.utilities.pan.vo.PANDetailsVO;
 import com.ashish.utilities.serviceinterface.IUtilitiesService;
 
