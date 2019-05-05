@@ -11,8 +11,9 @@ import javax.transaction.Transactional;
 
 import com.ashish.utilities.pan.vo.PANDetailsVO;
 
-@Transactional
+
 public class PANDetailsDAOImpl {
+	@Transactional
 	public  List<PANDetailsVO> fetchPANDetails(){
 		EntityManagerFactory emf =Persistence.createEntityManagerFactory("pan-validation-utility");
 		EntityManager em = emf.createEntityManager();

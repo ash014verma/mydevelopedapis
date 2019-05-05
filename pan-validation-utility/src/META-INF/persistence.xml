@@ -15,9 +15,11 @@
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:oracle:thin:@//localhost:1521/XE" />
 			<property name="javax.persistence.jdbc.user" value="SYSTEM" />
-			<property name="javax.persistence.jdbc.password"
-				value="SYSTEM" />
+			 <property name="hibernate.dialect" value ="org.hibernate.dialect.DB2Dialect"/>
+			<property name="show_sql" value ="true"/>
+			<property name="format_sql" value ="true"/>
+			<property name="hbm2ddl.auto" value = "auto"/> 
 		</properties>
-		
+
 	</persistence-unit>
 </persistence>

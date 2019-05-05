@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
+	<http auto-config="true" use-expressions="false">
+		<intercept-url  pattern="/welcome*" access="ROLE_USER"/>
+		<form-login/>
+		<!-- <form-login login-page="/login" default-target-url="/home"
+			authentication-failure-url="/loginfailed"></form-login>
+		<logout logout-success-url="/logout" /> -->
+	</http>
+	<authentication-manager>
+		<authentication-provider>
+		<password-encoder hash="bcrypt"></password-encoder>
+			<user-service>
+				<user name="ashish"  password="$2a$12$/CruHFSDM/2Pm37BOTk4oO3yxKGaW2/RsMq69QguoI9vYrqzxEO5G" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+</b:beans>
