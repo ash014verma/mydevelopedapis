@@ -13,7 +13,7 @@ public abstract class Team {
 	protected static Set<Resource> baMasterLMSTeamSet = new LinkedHashSet<>();
 	protected static Set<Resource> testMasterLMSTeamSet = new LinkedHashSet<>();
 	public abstract void addResource(Resource resource) throws LMSSystemException;
-	public abstract void removeResource(Resource resource) ;
+	public abstract void removeResource(Resource resource) throws LMSSystemException;
 	public static int displayTeamSize(TeamTypeEnum teamType) {
 		return teamMap.get(teamType) != null ? teamMap.get(teamType).size() : - 1;
 	}

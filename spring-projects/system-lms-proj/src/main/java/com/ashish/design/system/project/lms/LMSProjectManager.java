@@ -19,7 +19,6 @@ public class LMSProjectManager {
 				e.printStackTrace();
 			}
 		});
-
 		return team;
 	}
 	public void createTeams(Set<Resource> resources) {

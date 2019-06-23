@@ -11,24 +11,28 @@ import com.ashish.design.system.project.lms.Team;
 import com.ashish.design.system.project.lms.TeamTypeEnum;
 
 public class MasterDEVTeam extends Team {
-	
-	public void addResource(Resource resource) throws LMSSystemException{
-		if(resource != null && !StringUtils.isEmpty(resource.getName())) {
-				if(Arrays.asList(Role.DEVELOPER, Role.TL, Role.STL).contains(resource.getRole())) {
-					devMasterLMSTeamSet.add(resource);
-					teamMap.put(TeamTypeEnum.MASTER_DEV_TEAM, devMasterLMSTeamSet);
-				}else {
-					throw new LMSSystemException("wrong team selection");
-				}
-		}
-	}
-	public void removeResource(Resource resource) {
-		if(resource != null && !StringUtils.isEmpty(resource.getName())) {
-				if(Arrays.asList(Role.DEVELOPER, Role.TL, Role.STL).contains(resource.getRole())) {
-					devMasterLMSTeamSet.remove(resource);
-					teamMap.put(TeamTypeEnum.MASTER_DEV_TEAM, devMasterLMSTeamSet);
-				}
-		}
-	}
 
+	public void addResource(Resource resource) throws LMSSystemException{
+		if(isDEVRole(resource)) {
+			devMasterLMSTeamSet.add(resource);
+			teamMap.put(TeamTypeEnum.MASTER_DEV_TEAM, devMasterLMSTeamSet);
+		}else {
+			throw new LMSSystemException("wrong team selection");
+		}
+	}
+	public void removeResource(Resource resource) throws LMSSystemException {
+		if(isDEVRole(resource)) {
+			devMasterLMSTeamSet.remove(resource);
+			teamMap.put(TeamTypeEnum.MASTER_DEV_TEAM, devMasterLMSTeamSet);
+		}
+	}
+	private boolean isDEVRole(Resource resource) throws LMSSystemException {
+		if(resource != null && !StringUtils.isEmpty(resource.getName())) {
+			return Arrays.asList(Role.DEVELOPER, Role.TL, Role.STL).contains(resource.getRole()) 
+					? Boolean.TRUE : Boolean.FALSE;
+		}
+		else {
+			throw new LMSSystemException("resource name is null or empty.");
+		}
+	}
 }
