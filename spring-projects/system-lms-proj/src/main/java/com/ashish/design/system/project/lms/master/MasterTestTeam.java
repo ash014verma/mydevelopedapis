@@ -2,11 +2,11 @@ package com.ashish.design.system.project.lms.master;
 
 import org.springframework.util.StringUtils;
 
-import com.ashish.design.system.project.lms.LMSSystemException;
-import com.ashish.design.system.project.lms.Resource;
-import com.ashish.design.system.project.lms.Role;
-import com.ashish.design.system.project.lms.Team;
-import com.ashish.design.system.project.lms.TeamTypeEnum;
+import com.ashish.design.system.project.lms.domain.Team;
+import com.ashish.design.system.project.lms.enums.Role;
+import com.ashish.design.system.project.lms.enums.TeamTypeEnum;
+import com.ashish.design.system.project.lms.exception.LMSSystemException;
+import com.ashish.design.system.project.lms.vo.Resource;
 
 public class MasterTestTeam extends Team {
 

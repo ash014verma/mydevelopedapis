@@ -1,7 +1,7 @@
 package com.ashish.design.system.project.lms.upload;
 
-import com.ashish.design.system.project.lms.Team;
-import com.ashish.design.system.project.lms.TeamTypeEnum;
+import com.ashish.design.system.project.lms.domain.Team;
+import com.ashish.design.system.project.lms.enums.TeamTypeEnum;
 
 public class UploadTeamFactory {
 	
