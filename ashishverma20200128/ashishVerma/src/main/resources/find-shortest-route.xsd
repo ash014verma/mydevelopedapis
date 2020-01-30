@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/find-shortest-route"
+	xmlns:tns="http://www.example.org/find-shortest-route"
+	elementFormDefault="qualified">
+	<element name="RouteRequest" type="tns:RouteRequestType" />
+	<complexType name="RouteRequestType">
+		<sequence>
+			<element name="sourcePlanet" type="string" nillable="false"/>
+		</sequence>
+	</complexType>
+	<element name="RouteResponse" type="tns:RouteResponseType" />
+	<complexType name="RouteResponseType">
+
+		<sequence>
+		<element name="response" type="string"/>
+			<element name="distance" type="double" />
+		</sequence>
+
+	</complexType>
+
+</schema>
