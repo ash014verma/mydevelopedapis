@@ -3,6 +3,12 @@ package com.ashish.design.system.project.lms.client;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import com.ashish.design.system.project.lms.domain.LMSProjectManager;
+import com.ashish.design.system.project.lms.enums.Role;
+import com.ashish.design.system.project.lms.enums.TeamTypeEnum;
+import com.ashish.design.system.project.lms.exception.LMSSystemException;
+import com.ashish.design.system.project.lms.vo.Resource;
+
 public class LMSProjClientMain {
 	public static void main(String[] args) throws LMSSystemException {
 		LMSProjectManager manager = LMSProjectManager.getProjectManager();
@@ -19,7 +25,6 @@ public class LMSProjClientMain {
 		resources.add(new Resource("Rajat Tyagi", Role.DEVELOPER, TeamTypeEnum.UPLOAD_DEV_TEAM));
 		resources.add(new Resource("Shagun Tyagi", Role.DEVELOPER, TeamTypeEnum.UPLOAD_DEV_TEAM));
 		resources.add(new Resource("Pooja Gupta", Role.DEVELOPER, TeamTypeEnum.UPLOAD_DEV_TEAM));
-		resources.add(new Resource("Amit Yadav", Role.DEVELOPER, TeamTypeEnum.UPLOAD_DEV_TEAM));
 		resources.add(new Resource("Amit Yadav", Role.DEVELOPER, TeamTypeEnum.UPLOAD_DEV_TEAM));
 		
 		/*Upload Testing Team */
